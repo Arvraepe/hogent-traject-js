@@ -24,3 +24,15 @@ body {
     -o-transition: opacity .30s ease-in-out;
     transition: opacity .30s ease-in-out;
 }
+
+.prettyprint {
+    text-align: left;
+    border-radius: 8px;
+    background-color: #494949;
+    padding: 20px !important;
+    font-size: 32px;
+}
+
+.code {
+    width: 1160px;
+}
