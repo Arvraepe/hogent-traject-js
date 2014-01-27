@@ -1,0 +1,114 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Restful Webservices with NodeJS</title>
+
+    <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
+    <meta name="author" content="Bartek Szopka" />
+
+    <link href='http://fonts.googleapis.com/css?family=Hammersmith+One' rel='stylesheet' type='text/css'>
+    <link href="../../css/style.css" rel="stylesheet" />
+    <link href="../../css/custom.css" rel="stylesheet" />
+
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+</head>
+
+<body class="impress-not-supported">
+
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step centered" data-x="0" data-y="0">
+        <img src="../../images/nodejs-logo.png" />
+    </div>
+
+</div>
+
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+<script>
+    if ("ontouchstart" in document.documentElement) {
+        document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+    }
+</script>
+
+<script src="../../js/jquery.js"></script>
+<script src="../../js/impress.js"></script>
+<script src="../../js/highcharts.js"></script>
+<script>impress().init();</script>
+<script>
+    $(function () {
+        $('#github-chart').highcharts({
+            chart: {
+                backgroundColor: '#E0E4CC',
+                plotBackgroundColor: '#E0E4CC',
+                plotShadow: false
+            },
+            borderColor: '#E0E4CC',
+            title: {
+                text: '',
+                style: {
+                    'background': '#E0E4CC'
+                }
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            credits: {
+              enabled: false
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        color: '#000000',
+                        connectorColor: '#000000',
+                        format: '<b>{point.name}</b>: {point.percentage:.1f}%'
+                    },
+                    border: 0
+                }
+            },
+            series: [{
+                type: 'pie',
+                name: 'Browser share',
+                data: [
+                    {
+                        name: 'Ruby',
+                        y: 12,
+                        color: '#F38630'
+                    },{
+                        name: 'JavaScript',
+                        y: 21,
+                        sliced: true,
+                        selected: true,
+                        color: '#69D2E7'
+                    },
+                    ['Shell',    8],
+                    ['Python',     8],
+                    ['php',   7],
+                    ['C', 6],
+                    ['Java',       8],
+                    ['C++', 5],
+                    ['Perl', 4],
+                    ['CoffeeScript', 3],
+                    ['others', 18]
+                ]
+            }]
+        });
+    });
+</script>
+
+</body>
+</html>
