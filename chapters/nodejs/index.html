@@ -80,7 +80,7 @@ server.listen(8899, function () {
 var restify = require('restify');
 
 var server = restify.createServer({
-	name: 'Movia',
+	name: 'Hello World',
 	version: '1.0.0'
 });
 
@@ -96,6 +96,14 @@ server.listen(8899, function () {
   	console.log('%s listening at %s', server.name, server.url);
 });
         </pre>
+    </div>
+
+    <div id="cors-post-support" class="step centered" data-y="16000">
+        Extra support
+<pre class="prettyprint">
+server.use(restify.CORS());
+server.use(restify.fullResponse());
+server.use(restify.bodyParser());</pre>
     </div>
 
 </div>
