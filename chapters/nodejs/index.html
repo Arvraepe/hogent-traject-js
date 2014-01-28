@@ -28,9 +28,74 @@
     </div>
 
     <div id="node-js-restify" class="step centered code" data-x="0" data-y="2000">
+        NPM Packages
         <pre class="prettyprint">
+    &gt; cd project
     &gt; npm install restify
     &gt; npm install underscore</pre>
+    </div>
+
+    <div id="require-restify" class="step centered code" data-x="0" data-y="4000">
+        Require restify
+<pre class="prettyprint">
+var restify = require('restify');</pre>
+    </div>
+
+    <div id="create-server" class="step centered code" data-x="0" data-y="6000">
+        Create a Server
+<pre class="prettyprint">
+var server = restify.createServer({
+	name: 'Hello World',
+	version: '1.0.0'
+});</pre>
+    </div>
+
+    <div id="define-route" class="step centered code" data-y="8000">
+        Define a route
+<pre class="prettyprint">
+server.get('/hello', function (req, res, next) {
+  	res.send({
+  		success: true,
+  		message: 'Hello Restify!'
+  	});
+  	return next();
+});</pre>
+    </div>
+
+    <div id="listen-to-port" class="step centered code" data-y="10000">
+        Listen to a port
+<pre class="prettyprint">
+server.listen(8899, function () {
+  	console.log('%s listening at %s', server.name, server.url);
+});</pre>
+    </div>
+
+    <div id="test-in-browser" class="step centered" data-y="12000">
+        Try in browser!
+        <p><img src="../../images/node-url-browser.png" /></p>
+    </div>
+
+    <div id="full-code" class="step centered" data-y="14000">
+        <pre class="prettyprint" style="font-size: 28px">
+var restify = require('restify');
+
+var server = restify.createServer({
+	name: 'Movia',
+	version: '1.0.0'
+});
+
+server.get('/hello', function (req, res, next) {
+  	res.send({
+  		success: true,
+  		message: 'Hello Restify!'
+  	});
+  	return next();
+});
+
+server.listen(8899, function () {
+  	console.log('%s listening at %s', server.name, server.url);
+});
+        </pre>
     </div>
 
 </div>
