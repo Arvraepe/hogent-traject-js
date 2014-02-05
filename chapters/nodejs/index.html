@@ -75,7 +75,7 @@ server.listen(8899, function () {
         <p><img src="../../images/node-url-browser.png" /></p>
     </div>
 
-    <div id="full-code" class="step centered" data-y="14000">
+    <div id="full-code" class="step centered code" data-y="14000">
         <pre class="prettyprint" style="font-size: 28px">
 var restify = require('restify');
 
@@ -98,12 +98,22 @@ server.listen(8899, function () {
         </pre>
     </div>
 
-    <div id="cors-post-support" class="step centered" data-y="16000">
+    <div id="cors-post-support" class="step centered code" data-y="16000">
         Extra support
 <pre class="prettyprint">
 server.use(restify.CORS());
-server.use(restify.fullResponse());
 server.use(restify.bodyParser());</pre>
+    </div>
+
+    <div id="post-example" class="step centered code" data-y="18000">
+        Post Example
+<pre class="prettyprint">
+server.post('/message', function (req, res, next) {
+    res.send({
+        success: true,
+        message: req.body.message
+    });
+});</pre>
     </div>
 
 </div>

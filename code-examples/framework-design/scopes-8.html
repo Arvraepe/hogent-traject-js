@@ -1,0 +1,25 @@
+<script>
+
+    (function(parent, undefined){
+
+        var Framework = function () {
+
+            var hidden = 'private';
+            var exposed = 'public';
+
+            function method (value) {
+                return value;
+            }
+
+            return {
+                exposed: exposed,
+                method: method
+            };
+        }();
+
+        if (parent.Framework === undefined) parent.Framework = Framework;
+
+    })(window);
+
+
+</script>

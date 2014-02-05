@@ -1,0 +1,16 @@
+<script>
+    function outer () {
+        var outer = 0;
+
+        function inner (variable) {
+            return variable + 1;
+        }
+
+        for (var i = 0; i < 10; i += 1) {
+            outer = inner(outer);
+        }
+
+        return outer;
+    }
+
+</script>
