@@ -1,0 +1,17 @@
+<script>
+function addition () {
+    var value = this.value;
+
+    for (var i = 0; i < arguments.length; i += 1) {
+        value += arguments[i];
+    }
+
+    return value;
+}
+
+function applyAddition () {
+    return addition.apply({value: 1}, arguments);
+}
+
+console.log(applyAddition(1,2,3,4,5));
+</script>
