@@ -24,7 +24,6 @@ server.get('/question', function (req, res, next) {
   		success: true,
   		data: _.omit(questionObject, "correct")
   	});
-  	return next();
 });
 
 server.post('/answer', function (req, res, next) {

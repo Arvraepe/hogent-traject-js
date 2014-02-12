@@ -1,30 +1,30 @@
 exports.colours = [
     {
-        color: "red",
+        colour: "red",
         value: "#f00"
     },
     {
-        color: "green",
+        colour: "green",
         value: "#0f0"
     },
     {
-        color: "blue",
+        colour: "blue",
         value: "#00f"
     },
     {
-        color: "cyan",
+        colour: "cyan",
         value: "#0ff"
     },
     {
-        color: "magenta",
+        colour: "magenta",
         value: "#f0f"
     },
     {
-        color: "yellow",
+        colour: "yellow",
         value: "#ff0"
     },
     {
-        color: "black",
+        colour: "black",
         value: "#000"
     }
 ];
