@@ -15,7 +15,7 @@ server.use(restify.CORS());
 server.use(restify.bodyParser());
 
 function getRandomInt(min, max) {
-	return Math.floor(Math.random() * (max - min + 1) + min);
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 server.get('/question', function (req, res, next) {
