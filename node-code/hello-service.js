@@ -1,7 +1,7 @@
 var restify = require('restify');
 
 var server = restify.createServer({
-	name: 'Movia',
+	name: 'Hello',
 	version: '1.0.0'
 });
 
